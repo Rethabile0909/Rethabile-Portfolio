@@ -662,3 +662,51 @@ h2, .section-title {
         min-width: 100%; /* Uses full width on small screens */
     }
 }
+/* Mobile Responsiveness: Stacks video and text on small screens */
+@media (max-width: 900px) {
+    .project-grid {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .project-info, .project-visual {
+        width: 100%;
+    }
+}
+/* --- MOBILE RESPONSIVE FIX --- */
+@media (max-width: 768px) {
+    /* 1. Make the main container fit the screen */
+    body {
+        padding: 10px;
+        overflow-x: hidden; /* Prevents side-scrolling */
+    }
+
+    /* 2. Make your "Glass Cards" take up the full width */
+    .glass-card, .project-card, .experience-card {
+        width: 100% !important;
+        margin: 10px 0 !important;
+        padding: 15px !important;
+        box-sizing: border-box; /* Keeps padding inside the box */
+    }
+
+    /* 3. Stack the Project Grid (Text on top, Video below) */
+    .project-grid {
+        display: flex;
+        flex-direction: column; 
+        gap: 20px;
+    }
+
+    /* 4. Shrink the headers so they don't wrap weirdly */
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.2rem; }
+
+    /* 5. Fix the Navigation Menu */
+    nav {
+        display: flex;
+        flex-wrap: wrap; /* Allows menu items to move to a second line */
+        justify-content: center;
+        gap: 10px;
+    }
+}
