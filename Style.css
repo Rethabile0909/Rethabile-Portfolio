@@ -590,3 +590,75 @@ h2, .section-title {
     box-shadow: 0 0 30px rgba(255, 182, 193, 0.6);
     border-color: #ffb6c1;
 }
+
+/* Layout Grid */
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    padding: 20px;
+}
+
+.project-info { flex: 1; min-width: 300px; }
+.project-visual { flex: 1.2; min-width: 300px; }
+
+/* Modern Typography */
+.project-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, #ff8a8a, #f8c1c1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tech-badge {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Video Styling */
+.video-frame {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+.video-frame:hover {
+    transform: scale(1.02);
+}
+
+.video-frame iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+/* Feature List Icons */
+.feature-list { list-style: none; padding: 0; }
+.feature-list li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s;
+}
+
+.feature-list li i { color: #ff8a8a; }
+
+.feature-list li:hover { color: #f8c1c1; }
+
+@media (max-width: 768px) {
+    .project-grid {
+        flex-direction: column; /* Stacks text above video */
+        gap: 20px;
+        padding: 10px;
+    }
+    
+    .project-info, .project-visual {
+        min-width: 100%; /* Uses full width on small screens */
+    }
+}

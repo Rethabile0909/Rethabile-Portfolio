@@ -65,5 +65,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         typeEffect();
     }
+// Hover effect for project list items
+const listItems = document.querySelectorAll('.feature-list li');
 
+listItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        item.style.color = '#ffffff';
+        item.style.transform = 'translateX(10px)';
+    });
+    item.addEventListener('mouseleave', () => {
+        item.style.color = '';
+        item.style.transform = 'translateX(0)';
+    });
+});
 });
